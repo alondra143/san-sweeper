@@ -1,26 +1,51 @@
 * {
     box-sizing: border-box;
+    font-family: centurygothic, applegothic, serif;
 }
 
 body {
     margin: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
+    background-color: rgba(64,64,64,1);
 }
 
 header {
     text-align: center;
+    color: #c27cb5;
 }
 h1 {
     text-align: center;
+    color: #e17f93;
 }
 #container {
-   
     display: grid;
     place-content: center;
     grid-template-columns: repeat(4,90px) 90px;
     grid-template-rows: repeat(4, 90px) auto;
     /* height: 100vh; */
 }
-/* button {
-    border: 3px solid lightskyblue;
+
+button:hover {
+    background-color: black;
+}
+div {
+    justify-content: center;
+    font-size: 1.5rem;
+}
+#restartBtn {
+    background-color: whitesmoke;
+    margin: 5vmin 5vmin 5vmin 40vw;
+    padding: 10px;
+    border: 1px solid #221d24;
+    text-align: center;
+}
+
+#restartBtn:hover {
+    background-color: #914186;
+}
+
+    /*COLOR FOR SAFE TILES*/
+    /* background-color: #f9cdf1;*/
+    /*COLOR FOR MINE TILES*/
+    /* background-color: rgba(168,161,194,1);
 } */
