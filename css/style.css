@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: centurygothic, applegothic, serif;
+    text-align: center;
 }
 
 body {
@@ -25,6 +26,15 @@ h1 {
     /* height: 100vh; */
 }
 
+button {
+    border: 1px dotted black;
+}
+
+[hidden] {
+    background-color: whitesmoke;
+}
+
+
 button:hover {
     background-color: black;
 }
@@ -34,7 +44,7 @@ div {
 }
 #restartBtn {
     background-color: whitesmoke;
-    margin: 5vmin 5vmin 5vmin 40vw;
+    margin: 5vmin;
     padding: 10px;
     border: 1px solid #221d24;
     text-align: center;
