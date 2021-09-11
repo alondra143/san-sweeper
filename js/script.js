@@ -1,13 +1,7 @@
 // constant variables that won't change
 
 //1. what constitutes a safe tile vs. a mine
-const tiles = {
-    safe: {
-        color: 'pink',
-    },
-    mine: {
-        color: 'purple',
-
+const TILECOLORS = ['#f9cdf1', '#a8a1c2']
 
 // state variables (do not assign values)
 
@@ -18,18 +12,16 @@ let message;
 
 
 // grab and cache elements from the DOM (look at html) within variables that need to be accessed more than once
-
-
-
-
-
+let tileBtns = document.querySelectorAll('#container > button');
 
 
 // event listeners
 
 //1. randomize the background color of buttons between pink and purple and hide it. 
-//     make an array of the two colors, 
-
+for (let i = 0; i < tileBtns.length; i++) {
+    const randomColor = Math.floor(Math.random() * TILECOLORS.length);
+    tileBtns[i].style.backgroundColor = TILECOLORS[randomColor];
+}
 //2. when user clicks, reveal color of button.
 
 

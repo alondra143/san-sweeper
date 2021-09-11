@@ -29,7 +29,7 @@ button:hover {
     background-color: black;
 }
 div {
-    justify-content: center;
+    display: flexbox;
     font-size: 1.5rem;
 }
 #restartBtn {
@@ -47,5 +47,5 @@ div {
     /*COLOR FOR SAFE TILES*/
     /* background-color: #f9cdf1;*/
     /*COLOR FOR MINE TILES*/
-    /* background-color: rgba(168,161,194,1);
+    /* background-color: #a8a1c2;
 } */
