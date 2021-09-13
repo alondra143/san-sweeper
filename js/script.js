@@ -86,8 +86,13 @@ function resetGame() {
 //one event delegation to listen to all the buttons on the section with CONTAINER ID. 
 
 function clickTile(e) {
-    console.dir(e.target);
-    e.target.nextElementSibling.removeAttribute('hidden');
-    e.target.remove();
+    console.log(e.target);
+    if (e.target.className === 'default') {
+        e.target.nextElementSibling.removeAttribute('hidden');
+        e.target.remove();
+    } else {
+        console.dir(e.target);
+    }
+
 }
 
