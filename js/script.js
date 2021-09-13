@@ -1,7 +1,7 @@
 // constant variables that won't change
 
 //1. what constitutes a safe tile vs. a mine
-const TILECOLORS = ['#f9cdf1', '#a8a1c2']
+const TILECOLORS = ['rgb(249, 205, 241)', 'rgb(168, 161, 194)'];
 
 // state variables (do not assign values)
 
@@ -20,8 +20,8 @@ let coverUp = document.getElementsByClassName('default');
 
 
 
-document.querySelector('#restartBtn')
-    .addEventListener('click', resetGame);
+document.querySelector('#startBtn')
+    .addEventListener('click', startGame);
 
 document.querySelector("#revealBtn")
     .addEventListener('click', revealAll);
@@ -37,19 +37,9 @@ function getColor() {
     };
 }
 
-// tileBtns.addEventListener('click', function(e){
-//     e.target.console.log('testing single button');
-// })
-
-function testingRemove() {
-    tileBtns[revealAll];
-};
 //2. when user clicks, reveal color of button.
 
- function revealColor() {
-    oneBtn.removeAttribute('hidden');
-    oneCover.remove();
- }
+
 
 
 //3. if the button is pink, update the REMAINING TILES MESSAGE and subtract 1 from tile count and continue until it reaches 0, and then prompt a winner message. 
@@ -77,11 +67,13 @@ function revealBtn() {
 }
 // init function[remember to render() at the end], other functions[remember to render() at the end if it's updating something], render function
 
-function resetGame() {
+function startGame() {
     console.log('click is working');
     getColor();
 }
-
+function resetGame() {
+    btns
+}
 
 //one event delegation to listen to all the buttons on the section with CONTAINER ID. 
 
@@ -89,10 +81,17 @@ function clickTile(e) {
     console.log(e.target);
     if (e.target.className === 'default') {
         e.target.nextElementSibling.removeAttribute('hidden');
-        e.target.remove();
+            if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[1]){
+                e.target.setAttribute('hidden', 'true');
+                revealAll();
+            } else if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[0]){
+                e.target.setAttribute('hidden', 'true');
+                console.log('safe');
+            } else {
+                e.target.remove();
+            }       
     } else {
-        console.dir(e.target);
+        console.log('error');
     }
-
 }
 

@@ -42,7 +42,7 @@ div {
     display: flexbox;
     font-size: 1.5rem;
 }
-#restartBtn {
+#startBtn {
     background-color: whitesmoke;
     margin: 5vmin;
     padding: 10px;
@@ -50,7 +50,7 @@ div {
     text-align: center;
 }
 
-#restartBtn:hover {
+#startBtn:hover {
     background-color: #914186;
 }
 
