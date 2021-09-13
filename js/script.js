@@ -5,7 +5,11 @@ const TILECOLORS = ['rgb(249, 205, 241)', 'rgb(168, 161, 194)'];
 
 // state variables (do not assign values)
 
-let scores;
+let scores = {
+    player: 0,
+    computer: 0,
+};
+
 let winner;
 
 const scoreEls = {
@@ -42,6 +46,7 @@ function init() {
 }
 function render() {
     for (let score in scores) {
+        console.log(score, '< key names');
         scoreEls[score].textContent = scores[score];
     }
 }
