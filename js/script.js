@@ -35,7 +35,9 @@ function getColor() {
     };
 }
 
-
+tileBtns.addEventListener('click', function(e){
+    e.target.console.log('test');
+})
 
 function testingRemove() {
     tileBtns[revealAll];
@@ -49,9 +51,10 @@ function testingRemove() {
 
 
 //3. if the button is pink, update the REMAINING TILES MESSAGE and subtract 1 from tile count and continue until it reaches 0, and then prompt a winner message. 
+
 // if it comes back as purple, reveal all purple tiles and prompt lose message
 // if ( === '#a8a1c2') {
-//     showMines();
+//     showMines(); <--rename revealAll
 
 // }
 
