@@ -13,6 +13,8 @@ let message;
 
 // grab and cache elements from the DOM (look at html) within variables that need to be accessed more than once
 let tileBtns = document.querySelectorAll('#container > .tile');
+let btns = document.querySelector('#container')
+    .addEventListener('click', clickTile);
 
 let coverUp = document.getElementsByClassName('default');
 
@@ -35,9 +37,9 @@ function getColor() {
     };
 }
 
-tileBtns.addEventListener('click', function(e){
-    e.target.console.log('testing single button');
-})
+// tileBtns.addEventListener('click', function(e){
+//     e.target.console.log('testing single button');
+// })
 
 function testingRemove() {
     tileBtns[revealAll];
@@ -68,9 +70,24 @@ function revealAll() {
     }
     }
 };
+function revealBtn() {
+    for (let i = 0; i < tileBtns.length; i++){
+        tileBtns[i].removeAttribute('hidden');
+    }
+}
 // init function[remember to render() at the end], other functions[remember to render() at the end if it's updating something], render function
 
 function resetGame() {
     console.log('click is working');
     getColor();
 }
+
+
+//one event delegation to listen to all the buttons on the section with CONTAINER ID. 
+
+function clickTile(e) {
+    console.dir(e.target);
+    e.target.nextElementSibling.removeAttribute('hidden');
+    e.target.remove();
+}
+
