@@ -23,8 +23,8 @@ let coverUp = document.getElementsByClassName('default');
 document.querySelector('#startBtn')
     .addEventListener('click', startGame);
 
-document.querySelector("#revealBtn")
-    .addEventListener('click', revealAll);
+document.querySelector("#resetBtn")
+    .addEventListener('click', resetGame);
 
 // event listeners
 

@@ -37,14 +37,15 @@ button {
 
 button:hover {
     background-color: black;
+    color: white;
 }
 div {
     display: flexbox;
     font-size: 1.5rem;
 }
-#startBtn {
+#startBtn, #resetBtn {
     background-color: whitesmoke;
-    margin: 5vmin;
+    margin-top: 5vmin;
     padding: 10px;
     border: 1px solid #221d24;
     text-align: center;
@@ -52,6 +53,9 @@ div {
 
 #startBtn:hover {
     background-color: #914186;
+}
+#resetBtn:hover {
+    background-color: #f68bc4;
 }
 
     /*COLOR FOR SAFE TILES*/
