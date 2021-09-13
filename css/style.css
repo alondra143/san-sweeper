@@ -3,6 +3,20 @@
     font-family: centurygothic, applegothic, serif;
     text-align: center;
 }
+#scoreboard {
+    display: grid;
+    grid-template-columns: 25vmin 25vmin;
+    grid-template-rows: 10vmin 2vmin 10vmin;
+    justify-content: center;
+    align-items: center;
+}
+
+#p-score {
+    color:pink;
+}
+#k-score {
+    color: #914186;
+}
 
 body {
     margin: 0;
@@ -23,7 +37,7 @@ h1 {
     place-content: center;
     grid-template-columns: repeat(4,90px) 90px;
     grid-template-rows: repeat(4, 90px) auto;
-    /* height: 100vh; */
+    margin-top: -40px;
 }
 
 button {
