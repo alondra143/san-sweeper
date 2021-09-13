@@ -36,7 +36,7 @@ function getColor() {
 }
 
 tileBtns.addEventListener('click', function(e){
-    e.target.console.log('test');
+    e.target.console.log('testing single button');
 })
 
 function testingRemove() {
