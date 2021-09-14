@@ -28,6 +28,10 @@ let btns = document.querySelector('#container')
 //blank tiles that are hiding the tiles with randomized colors
 let coverUp = document.getElementsByClassName('default');
 
+let playerMsg = document.querySelector('#p-win');
+let computerMsg = document.querySelector('#k-win');
+
+
 document.querySelector('#startBtn')
     .addEventListener('click', startGame);
 
