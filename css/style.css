@@ -75,13 +75,13 @@ div {
     display: inline-block;
     color: white;
     background-color: #f8bcc9;
-    margin-top: 10px;
+    margin-top: 5vmin;
 }
 #k-win {
     display: inline-block;
     color: #ca22a6;
     background-color: black;
-    margin-top: 10px;
+    margin-top: 5vmin;
 }
     /*COLOR FOR SAFE TILES*/
     /* background-color: #f9cdf1;*/

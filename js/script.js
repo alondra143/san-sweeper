@@ -41,17 +41,16 @@ document.querySelector("#resetBtn")
 
 // event listeners
 
-
-
+//how page looks at start
 function init() {
     scores = {
         player: 0,
         computer: 0,
     }
     winner = null;
-    render();
     playerMsg.textContent= "";
     computerMsg.textContent = "";
+    render();
 }
 
 function render() {
@@ -60,6 +59,7 @@ function render() {
         scoreEls[score].textContent = scores[score];
     }
 }
+
 //1. randomize the background color of buttons between pink and purple and hide it. 
 function getColor() {
     for (let i = 0; i < tileBtns.length; i++) {
@@ -68,11 +68,8 @@ function getColor() {
     };
 }
 
-//2. when user clicks, reveal color of button.
 
-//3. if the button is pink, update the REMAINING TILES MESSAGE and subtract 1 from tile count and continue until it reaches 0, and then prompt a winner message.  << may switch to 1 point per pink tile, one point per mine blowup, and end the game when the computer wins at 10 or player wins at 20.
-
-// if it comes back as purple, reveal all purple tiles and prompt lose message
+// function that reveals all tiles
 function revealAll() {
     for (let i = 0; i < tileBtns.length; i++) {
         tileBtns[i].removeAttribute('hidden')
@@ -82,7 +79,7 @@ function revealAll() {
     }
 };
 
-//reverse the attributes to hide the tileBtns and show the coverUp
+//reverse the attributes to hide the tileBtns and show the coverUp, init sets the scores back to 0.
 function resetGame() {
     for (let i = 0; i < tileBtns.length; i++) {
         tileBtns[i].setAttribute('hidden', 'true');
@@ -93,15 +90,13 @@ function resetGame() {
     getColor();
     init();
 };
-// init function[remember to render() at the end], other functions[remember to render() at the end if it's updating something], render function
 
 function startGame() {
     console.log('click is working');
     getColor();
+    init();
 }
-
 //one event delegation to listen to all the buttons on the section with CONTAINER ID to reveal the tile with the color upon clicking, and what it should do
-
 function clickTile(e) {
     console.log(e.target);
     if (e.target.className === 'default') {
@@ -109,7 +104,6 @@ function clickTile(e) {
         e.target.setAttribute('hidden', 'true')
             if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[1]){
                 computerWins();
-                computerWon();
             } else if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[0]){
                 playerWinning();
             } else {
@@ -120,41 +114,37 @@ function clickTile(e) {
     checkWin();
     render();
 }
-
-//define a function to make the computer win the game
-//if this tile is clicked, increment computer score by one
-
-//if computer wins, reload page in timeout of 10 seconds 
-//
-//use revealAll inside computer win function
+//give player one point per safe tile clicked
+function playerWinning() {
+    scores.player++;
+}
+//if player has 5 safe tiles clicked, reveal all tiles and prompt winning message.
 function checkWin() {
-    if (scores.player === 1){
+    if (scores.player === 5){
         winner = 'player';
         revealAll();
         playerWon();
     } else{
     }
 }
-function playerWinning() {
-    scores.player++;
-}
 // player won message should appear.
 function playerWon() {
     playerMsg.textContent = "You won! Thanks for playing :)"
 }
-//computer won message should appear.
-function computerWon() {
-    computerMsg.textContent = "You stepped on Kuromi's mine! Better luck next time >:)"
-}
-//computer wins function if the the computer's score is 1, stop it from assigning points per click after the game has ended.
+//if player clicks on mine tile, give computer 1 point, reveal all tiles, prompt lose message and stop score from assigning points per click.
 function computerWins() {
     winner = 'computer';
     revealAll();
+    computerWon();
     scores[winner]++
     if (scores.computer === 1) {
         scores.computer === 1;
     } else {
         console.log('wrong');
     }
+}
+//computer won message should appear.
+function computerWon() {
+    computerMsg.textContent = "You stepped on Kuromi's mine! Better luck next time >:)"
 }
 
