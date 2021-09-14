@@ -110,22 +110,29 @@ function clickTile(e) {
     } else {
         console.log('error');
     }
-    // scores[winner]++
+    checkWin();
     render();
 }
 
 //define a function to make the computer win the game
 //if this tile is clicked, increment computer score by one
-//if computer score is 1, computer wins
+
 //if computer wins, reload page in timeout of 10 seconds 
 //
 //use revealAll inside computer win function
-
+function checkWin() {
+    if (scores.player === 5){
+        winner = 'player';
+        revealAll();
+    } else{
+    }
+}
+//
 function playerWinning() {
     winner = 'player';
     scores[winner]++;
 }
-
+//computer wins function if the the computer's score is 1, stop it from assigning points per click after the game has ended.
 function computerWins() {
     winner = 'computer';
     revealAll();
