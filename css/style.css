@@ -71,7 +71,18 @@ div {
 #resetBtn:hover {
     background-color: #f68bc4;
 }
-
+#p-win {
+    display: inline-block;
+    color: white;
+    background-color: #f8bcc9;
+    margin-top: 10px;
+}
+#k-win {
+    display: inline-block;
+    color: #ca22a6;
+    background-color: black;
+    margin-top: 10px;
+}
     /*COLOR FOR SAFE TILES*/
     /* background-color: #f9cdf1;*/
     /*COLOR FOR MINE TILES*/

@@ -50,6 +50,8 @@ function init() {
     }
     winner = null;
     render();
+    playerMsg.textContent= "";
+    computerMsg.textContent = "";
 }
 
 function render() {
@@ -107,6 +109,7 @@ function clickTile(e) {
         e.target.setAttribute('hidden', 'true')
             if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[1]){
                 computerWins();
+                computerWon();
             } else if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[0]){
                 playerWinning();
             } else {
@@ -125,16 +128,23 @@ function clickTile(e) {
 //
 //use revealAll inside computer win function
 function checkWin() {
-    if (scores.player === 5){
+    if (scores.player === 1){
         winner = 'player';
         revealAll();
+        playerWon();
     } else{
     }
 }
-//
 function playerWinning() {
-    winner = 'player';
-    scores[winner]++;
+    scores.player++;
+}
+// player won message should appear.
+function playerWon() {
+    playerMsg.textContent = "You won! Thanks for playing :)"
+}
+//computer won message should appear.
+function computerWon() {
+    computerMsg.textContent = "You stepped on Kuromi's mine! Better luck next time >:)"
 }
 //computer wins function if the the computer's score is 1, stop it from assigning points per click after the game has ended.
 function computerWins() {
