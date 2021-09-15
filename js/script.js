@@ -55,7 +55,6 @@ function init() {
 //updates the scores between the computer and the player
 function render() {
     for (let score in scores) {
-        console.log(score, '< key names');
         scoreEls[score].textContent = scores[score];
     }
 }
@@ -93,7 +92,6 @@ function resetGame() {
 
 //gets the color hidden under the tiles when game starts
 function startGame() {
-    console.log('click is working');
     btns.addEventListener('click',clickTile);
     getColor();
     init();
@@ -101,7 +99,6 @@ function startGame() {
 //clicks on the blank tile, reveals the hidden tile, and hides the blank tile initially clicked. 
 //if the hidden tiles color matches the mine color, the computer wins. if the tile color matches the safe tile, the player continues playing
 function clickTile(e) {
-    console.log(e.target);
     if (e.target.className === 'default') {
         e.target.nextElementSibling.removeAttribute('hidden');
         e.target.setAttribute('hidden', 'true')
@@ -112,7 +109,6 @@ function clickTile(e) {
             } else {
             }       
     } else {
-        console.log('error');
     }
     checkWin();
     render();
@@ -143,7 +139,6 @@ function computerWins() {
     if (scores.computer === 1) {
         scores.computer === 1;
     } else {
-        console.log('wrong');
     }
 }
 //computer won message should appear.
