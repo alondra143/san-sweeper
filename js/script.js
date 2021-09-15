@@ -23,7 +23,7 @@ const scoreEls = {
 let tileBtns = document.querySelectorAll('#container > .tile');
 // all of the buttons within the section with container ID (hidden and blank buttons)
 let btns = document.querySelector('#container')
-    .addEventListener('click', clickTile);
+
 // all of the blank buttons shown on the grid
 let coverUp = document.getElementsByClassName('default');
 // where winning message will appear for player
@@ -94,6 +94,7 @@ function resetGame() {
 //gets the color hidden under the tiles when game starts
 function startGame() {
     console.log('click is working');
+    btns.addEventListener('click',clickTile);
     getColor();
     init();
 }

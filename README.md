@@ -1,8 +1,5 @@
 # <h1 align="center">SAN-SWEEPER</h1>
 ## Background Info
-
-
-
 As a child when I didn't have Internet access but was allowed to play on the computer, Minesweeper was my go-to game. I didn't know the exact rules on how to play it, but I knew that I could randomly click on the tiles and keep going until I happened across a mine, and would have fun trying my best as much as I could.
 
 For this project, I wanted to capture that nostalgic aspect of Minesweeper as a beginner project with the aspects of developing it into the real deal, and what better way to indulge in that by grabbing inspiration from Sanrio?
@@ -35,7 +32,7 @@ Click "watch your step" to get started and see if you can outwit the trickster o
 ## Next Steps (Icebox):
 In the near future I want to be able to incorporate recursive functions in order to help the player avoid the mines by detecting any nearby the tile they've clicked, and/or how many safe tiles/mines are remaining on the board after each turn.
 
-It would also be interesting to enhance the project with levels by expanding the board, the amount of mines, and possible setting a timer per board. The personalization of the game could continue by assigning a Sanrio character to each level, and coordinating the color scheme of the board/userface to each one. 
+It would also be interesting to enhance the project with levels by expanding the board, the amount of mines, how many safe tiles it takes to win, and possibly setting a timer per board. The personalization of the game could continue by assigning a Sanrio character to each level, and coordinating the color scheme of the board/userface to each one. 
 
 This would give the game a fresh advancement for the user both visually and through the gameplay.
 
