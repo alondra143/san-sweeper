@@ -30,7 +30,7 @@ Help My Melody through the board by clicking on a tile.
 
 > <span style="color:purple">But once you've clicked on a purple tile, all of Kuromi's mines will explode and you'll have to try your luck again!</span> 
 
-Click "watch your step" to get started and see if you can beat the trickster of the day.
+Click "watch your step" to get started and see if you can outwit the trickster of the day.
 
 ## Next Steps (Icebox):
 In the near future I want to be able to incorporate recursive functions in order to help the player avoid the mines by detecting any nearby the tile they've clicked, and/or how many safe tiles/mines are remaining on the board after each turn.
