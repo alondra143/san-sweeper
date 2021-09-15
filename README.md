@@ -1,4 +1,4 @@
-# SAN-SWEEPER
+# <h1 align="center">SAN-SWEEPER</h1>
 ## Background Info
 
 
