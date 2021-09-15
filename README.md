@@ -2,7 +2,7 @@
 ## Background Info
 As a child when I didn't have Internet access but was allowed to play on the computer, Minesweeper was my go-to game. I didn't know the exact rules on how to play it, but I knew that I could randomly click on the tiles and keep going until I happened across a mine, and would have fun trying my best as much as I could.
 
-For this project, I wanted to capture that nostalgic aspect of Minesweeper as a beginner project with the aspects of developing it into the real deal, and what better way to indulge in that by grabbing inspiration from Sanrio?
+For this project, I wanted to capture that nostalgic aspect of Minesweeper as a beginner project with the aspiration of developing it into the real deal, and what better way to indulge in that by grabbing inspiration from Sanrio?
 
 
 
