@@ -29,6 +29,8 @@ header {
     color: #c27cb5;
 }
 h1 {
+    font-family: 'Raleway Dots', serif;
+    font-size: 64px;
     text-align: center;
     color: #e17f93;
 }
@@ -73,15 +75,17 @@ div {
 }
 #p-win {
     display: inline-block;
-    color: white;
-    background-color: #f8bcc9;
+    color: #f8bcc9;
     margin-top: 5vmin;
+    font-family: 'Press Start 2P', serif;
+    font-size: 1rem;
 }
 #k-win {
     display: inline-block;
     color: #ca22a6;
-    background-color: black;
     margin-top: 5vmin;
+    font-family: 'Press Start 2P', serif;
+    font-size: 1rem;
 }
     /*COLOR FOR SAFE TILES*/
     /* background-color: #f9cdf1;*/
