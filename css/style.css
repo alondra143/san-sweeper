@@ -5,12 +5,25 @@
 }
 #scoreboard {
     display: grid;
-    grid-template-columns: 25vmin 25vmin;
+    grid-template-columns: 25vmin 25vmin 25vmin 25vmin;
     grid-template-rows: 10vmin 2vmin 10vmin;
     justify-content: center;
     align-items: center;
 }
-
+#scoreboard > div:first-child {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+#scoreboard > div:last-child {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+#computer img {
+    width: 100%;
+}
+#player img {
+    width: 55%;
+}
 #p-score {
     color:pink;
 }
@@ -24,10 +37,6 @@ body {
     background-color: rgba(64,64,64,1);
 }
 
-header {
-    text-align: center;
-    color: #c27cb5;
-}
 h1 {
     font-family: 'Raleway Dots', serif;
     font-size: 64px;
@@ -37,8 +46,8 @@ h1 {
 #container {
     display: grid;
     place-content: center;
-    grid-template-columns: repeat(4,90px) 90px;
-    grid-template-rows: repeat(4, 90px) auto;
+    grid-template-columns: repeat(4,150px) 150px;
+    grid-template-rows: repeat(4, 150px) auto;
     margin-top: -40px;
 }
 

@@ -30,6 +30,9 @@ let coverUp = document.getElementsByClassName('default');
 let playerMsg = document.querySelector('#p-win');
 // where losing message will appear for player
 let computerMsg = document.querySelector('#k-win');
+
+// where scores render, also nesting images
+let scoreBoard = document.querySelector('#scoreboard');
 //starts the game
 document.querySelector('#startBtn')
     .addEventListener('click', startGame);
@@ -143,6 +146,6 @@ function computerWins() {
 }
 //computer won message should appear.
 function computerWon() {
-    computerMsg.textContent = "You stepped on Kuromi's mine! Better luck next time >:)"
+    computerMsg.textContent = "You stepped on Kuromi's mine! Better luck next time!"
 }
 

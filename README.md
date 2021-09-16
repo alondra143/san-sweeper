@@ -5,6 +5,7 @@ As a kid when I didn't have Internet access but was allowed to play on the compu
 For this project, I wanted to capture that nostalgic aspect of Minesweeper as a beginner project with the aspiration of developing it into the real deal, and what better way to indulge in that by grabbing inspiration from Sanrio? (No copyright intended)
 
 
+[***GAME LINK***](https://alondra143.github.io/san-sweeper/)
 
 ### Wireframe
 <img src="https://i.imgur.com/GAjAAzY.jpg" width="900">
@@ -21,7 +22,7 @@ For this project, I wanted to capture that nostalgic aspect of Minesweeper as a 
 ## Getting Started:
 <img src="https://cdn130.picsart.com/241652462013212.png?type=webp&to=min&r=640" alt text="sanrio my melody and kuromi characters" align="center" width="200">
 
-Meet My Melody and Kuromi, two best friends who love to play tricks on each other. Today, Kuromi decided to test My Melody by planting a few mines and wants to see if My Melody is able to play without setting any of them off.
+Meet My Melody and Kuromi, two best friends who love to play tricks on each other. Today, Kuromi decided to test My Melody by planting a few mines to see if My Melody is able to play without setting any of them off.
 
 Help My Melody through the board by clicking on a tile. 
 > <span style="color:pink">If it's pink, you're safe and can continue on ahead. If you're able to help My Melody get to 5 safe tiles, you'll win!</span> 
