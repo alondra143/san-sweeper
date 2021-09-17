@@ -11,7 +11,7 @@ let scores = {
 };
 let winner;
 
-// *--/grab and cache elements from the DOM (look at html) within variables that need to be accessed more than once/--*
+// *--/grab and cache elements from the DOM within variables that need to be accessed more than once/--*
 
 // grabs each image element within corresponding div IDs.
 const imgEls = {
@@ -25,21 +25,25 @@ const scoreEls = {
     kuromi: document.querySelector('#k-score'),
 }
 
-//all of the hidden buttons on the grid
-let tileBtns = document.querySelectorAll('#container > .tile');
-
-// all of the buttons within the section with container ID (hidden and blank buttons)
+// grabs all of the buttons within the section with container ID (hidden and blank buttons)
 let btns = document.querySelector('#container')
 
-// all of the blank buttons shown on the grid
+// only the hidden buttons on the grid
+let tileBtns = document.querySelectorAll('#container > .tile');
+
+// only the blank buttons shown on the grid
 let coverUp = document.getElementsByClassName('default');
+
 // where winning message will appear for player
 let playerMsg = document.querySelector('#p-win');
+
 // where losing message will appear for player
 let kuromiMsg = document.querySelector('#k-win');
+
 //starts the game
 document.querySelector('#startBtn')
     .addEventListener('click', startGame);
+
 //resets game to play again
 document.querySelector("#resetBtn")
     .addEventListener('click', resetGame);
@@ -74,7 +78,6 @@ function getColor() {
     };
 }
 
-
 // function that reveals all tileBtns and hides all defaultButtons to show the remaining mines/safe tiles
 function revealAll() {
     for (let i = 0; i < tileBtns.length; i++) {
@@ -98,21 +101,21 @@ function resetGame() {
     clrHilite();
 };
 
-//gets the color hidden under the tiles when game starts
+//gets the color hidden under the tiles when game starts, and contains event listener to start the game
 function startGame() {
     btns.addEventListener('click',clickTile);
     getColor();
     init();
 }
-//clicks on the blank tile, reveals the hidden tile, and hides the blank tile initially clicked. 
-//if the hidden tiles color matches the mine color, the computer wins. if the tile color matches the safe tile, the player continues playing
+//event listener that when you click a button in the grid it reveals the hidden tile, and hides the blank tile initially clicked. 
 function clickTile(e) {
     if (e.target.className === 'default') {
         e.target.nextElementSibling.removeAttribute('hidden');
         e.target.setAttribute('hidden', 'true')
-            if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[1]){
+        //if the hidden tile's color matches the mine color, kuromi wins. if the tile color matches the safe tile, the player continues playing
+            if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[1]) {
                 kuromiWins();
-            } else if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[0]){
+            } else if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[0]) {
                 playerWinning();
             } else {
             }       
@@ -122,24 +125,28 @@ function clickTile(e) {
     hiliteWinner();
     render();
 }
+
 //updates player +1 point per safe tile clicked
 function playerWinning() {
     scores.player++;
 }
+
 //once player has 5 safe tiles clicked, reveal all tiles and prompt winning message.
 function checkWin() {
-    if (scores.player === 5){
+    if (scores.player === 5) {
         winner = 'player';
         revealAll();
         playerWon();
-    } else{
+    } else {
     }
 }
+
 // player won message should appear.
 function playerWon() {
     playerMsg.textContent = "You won! Thanks for playing :)";
 }
-//if player clicks on mine tile, give computer 1 point, reveal all tiles, prompt lose message and stop score from assigning points per click.
+
+//if player clicks on mine tile, give kuromi +1 point, reveal all tiles, prompt lose message and stop score from assigning points per click.
 function kuromiWins() {
     winner = 'kuromi';
     revealAll();
@@ -150,23 +157,27 @@ function kuromiWins() {
     } else {
     }
 }
+
 //computer won message should appear.
 function kuromiWon() {
     kuromiMsg.textContent = "You stepped on Kuromi's mine! Better luck next time!";
 }
+
+// depending on who the winner is, the function will set a transition and give the loser a lower opacity to showcase the winner.
 function hiliteWinner() {
     if (winner === 'kuromi') {
         imgEls.playerImg.style.opacity = '.2';
         imgEls.playerImg.style.transition = '.8s ease-in-out';
         imgEls.playerImg.style.transition = '.7s all';
-    }else if (winner === 'player') {
+    } else if (winner === 'player') {
         imgEls.kuromiImg.style.opacity = '.2';
         imgEls.kuromiImg.style.transition = '.8s ease-in-out';
         imgEls.kuromiImg.style.transition = '.7s all';
-    }else {
+    } else {
     }
 }
 
+// resets both images back to 1 opacity
 function clrHilite() {
     for (let img in imgEls) {
         imgEls[img].style.opacity = 1;
