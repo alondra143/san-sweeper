@@ -3,24 +3,31 @@
 //what constitutes a safe tile vs. a mine: TILECOLORS[0] is a safe tile, TILECOLORS[1] is a mine
 const TILECOLORS = ['rgb(249, 205, 241)', 'rgb(168, 161, 194)'];
 
-
-// *--/state variables (do not assign values)/--*
+// *--/state variables/--*
 
 let scores = {
     player: 0,
-    computer: 0,
+    kuromi: 0,
 };
 let winner;
 
 // *--/grab and cache elements from the DOM (look at html) within variables that need to be accessed more than once/--*
 
+// grabs each image element within corresponding div IDs.
+const imgEls = {
+    playerImg: document.querySelector('#player > img'),
+    kuromiImg: document.querySelector('#kuromi > img'),
+}
+
 // object storing where the scores will be updated between player and computer
 const scoreEls = {
     player: document.querySelector('#p-score'),
-    computer: document.querySelector('#k-score'),
+    kuromi: document.querySelector('#k-score'),
 }
+
 //all of the hidden buttons on the grid
 let tileBtns = document.querySelectorAll('#container > .tile');
+
 // all of the buttons within the section with container ID (hidden and blank buttons)
 let btns = document.querySelector('#container')
 
@@ -29,10 +36,7 @@ let coverUp = document.getElementsByClassName('default');
 // where winning message will appear for player
 let playerMsg = document.querySelector('#p-win');
 // where losing message will appear for player
-let computerMsg = document.querySelector('#k-win');
-
-// where scores render, also nesting images
-let scoreBoard = document.querySelector('#scoreboard');
+let kuromiMsg = document.querySelector('#k-win');
 //starts the game
 document.querySelector('#startBtn')
     .addEventListener('click', startGame);
@@ -47,11 +51,11 @@ document.querySelector("#resetBtn")
 function init() {
     scores = {
         player: 0,
-        computer: 0,
+        kuromi: 0,
     }
     winner = null;
     playerMsg.textContent= "";
-    computerMsg.textContent = "";
+    kuromiMsg.textContent = "";
     render();
 }
 
@@ -91,6 +95,7 @@ function resetGame() {
     }
     getColor();
     init();
+    clrHilite();
 };
 
 //gets the color hidden under the tiles when game starts
@@ -106,7 +111,7 @@ function clickTile(e) {
         e.target.nextElementSibling.removeAttribute('hidden');
         e.target.setAttribute('hidden', 'true')
             if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[1]){
-                computerWins();
+                kuromiWins();
             } else if (e.target.nextElementSibling.style.backgroundColor === TILECOLORS[0]){
                 playerWinning();
             } else {
@@ -114,6 +119,7 @@ function clickTile(e) {
     } else {
     }
     checkWin();
+    hiliteWinner();
     render();
 }
 //updates player +1 point per safe tile clicked
@@ -131,21 +137,38 @@ function checkWin() {
 }
 // player won message should appear.
 function playerWon() {
-    playerMsg.textContent = "You won! Thanks for playing :)"
+    playerMsg.textContent = "You won! Thanks for playing :)";
 }
 //if player clicks on mine tile, give computer 1 point, reveal all tiles, prompt lose message and stop score from assigning points per click.
-function computerWins() {
-    winner = 'computer';
+function kuromiWins() {
+    winner = 'kuromi';
     revealAll();
-    computerWon();
+    kuromiWon();
     scores[winner]++
-    if (scores.computer === 1) {
-        scores.computer === 1;
+    if (scores.kuromi === 1) {
+        scores.kuromi = 1;
     } else {
     }
 }
 //computer won message should appear.
-function computerWon() {
-    computerMsg.textContent = "You stepped on Kuromi's mine! Better luck next time!"
+function kuromiWon() {
+    kuromiMsg.textContent = "You stepped on Kuromi's mine! Better luck next time!";
+}
+function hiliteWinner() {
+    if (winner === 'kuromi') {
+        imgEls.playerImg.style.opacity = '.2';
+        imgEls.playerImg.style.transition = '.8s ease-in-out';
+        imgEls.playerImg.style.transition = '.7s all';
+    }else if (winner === 'player') {
+        imgEls.kuromiImg.style.opacity = '.2';
+        imgEls.kuromiImg.style.transition = '.8s ease-in-out';
+        imgEls.kuromiImg.style.transition = '.7s all';
+    }else {
+    }
 }
 
+function clrHilite() {
+    for (let img in imgEls) {
+        imgEls[img].style.opacity = 1;
+    }
+}

@@ -3,33 +3,6 @@
     font-family: centurygothic, applegothic, serif;
     text-align: center;
 }
-#scoreboard {
-    display: grid;
-    grid-template-columns: 25vmin 25vmin 25vmin 25vmin;
-    grid-template-rows: 10vmin 2vmin 10vmin;
-    justify-content: center;
-    align-items: center;
-}
-#scoreboard > div:first-child {
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-#scoreboard > div:last-child {
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-#computer img {
-    width: 100%;
-}
-#player img {
-    width: 55%;
-}
-#p-score {
-    color:pink;
-}
-#k-score {
-    color: #914186;
-}
 
 body {
     margin: 0;
@@ -43,6 +16,44 @@ h1 {
     text-align: center;
     color: #e17f93;
 }
+
+#scoreboard {
+    display: grid;
+    grid-template-columns: 25vmin 25vmin 25vmin 25vmin;
+    grid-template-rows: 10vmin 2vmin 10vmin;
+    justify-content: center;
+    align-items: center;
+}
+
+#scoreboard > div:first-child {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    /* border: 3px solid pink; */
+}
+
+#scoreboard > div:last-child {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#kuromi img {
+    width: 100%;
+}
+
+#player img {
+    width: 55%;
+ }
+
+#p-score {
+    color:pink;
+    font-weight: bold;
+}
+
+#k-score {
+    color: #914186;
+    font-weight: bold;
+}
+
 #container {
     display: grid;
     place-content: center;
@@ -59,42 +70,47 @@ button {
     background-color: whitesmoke;
 }
 
-
 button:hover {
     background-color: black;
     color: white;
 }
+
 div {
     display: flexbox;
     font-size: 1.5rem;
 }
+
 #startBtn, #resetBtn {
     background-color: whitesmoke;
     margin-top: 5vmin;
     padding: 10px;
     border: 1px solid #221d24;
     text-align: center;
+    font-size: 1rem;
 }
 
 #startBtn:hover {
     background-color: #914186;
 }
+
 #resetBtn:hover {
     background-color: #f68bc4;
 }
+
 #p-win {
     display: inline-block;
     color: #f8bcc9;
     margin-top: 5vmin;
     font-family: 'Press Start 2P', serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
+
 #k-win {
     display: inline-block;
-    color: #ca22a6;
+    color: rgba(198, 55, 193, 1);
     margin-top: 5vmin;
     font-family: 'Press Start 2P', serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
     /*COLOR FOR SAFE TILES*/
     /* background-color: #f9cdf1;*/
