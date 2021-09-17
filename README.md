@@ -8,8 +8,17 @@ For this project, I wanted to capture that nostalgic aspect of Minesweeper as a 
 <img src="https://i.imgur.com/GAjAAzY.jpg" width="900">
 
 
-### San-Sweeper Screenshots
+## San-Sweeper Screenshots
 
+| Screenshot | Description |
+|------------ | ------------|
+| <img src="imgs/screenshot0init.png" width="300"> | How the game loads |
+| <img src="imgs/screenshot1start.png" width="300"> | Click on "watch your step!" to begin the game |
+| <img src="imgs/screenshot2click.png" width="300"> | How the page looks when hovering over tiles to click |
+| <img src="imgs/screenshot3safe.png" width="300"> | If you click on a tile and it turns pink, you're safe and win a point. |
+| <img src="imgs/screenshot4loss.png" width="300"> | If you click on a tile and it turns purple, all the tiles are revealed and you lose, Kuromi wins a point. |
+| <img src="imgs/screenshot5win.png" width="300"> | Once you've clicked on 5 safe tiles with a score of 5, you win! |
+| <img src="imgs/screenshot6reset.png" width="300"> | Click "try again" to reset the game. |
 
 ### Technologies Used:
 - HTML
@@ -17,7 +26,7 @@ For this project, I wanted to capture that nostalgic aspect of Minesweeper as a 
 - Javascript
 
 ## Getting Started:
-<img src="https://cdn130.picsart.com/241652462013212.png?type=webp&to=min&r=640" alt text="sanrio my melody and kuromi characters" align="center" width="200">
+<img src="https://cdn130.picsart.com/241652462013212.png?type=webp&to=min&r=640" alt text="sanrio my melody and kuromi characters" width="200">
 
 Meet My Melody and Kuromi, two best friends who love to play tricks on each other. Today, Kuromi decided to test My Melody by planting a few mines to see if My Melody is able to play without setting any of them off.
 
